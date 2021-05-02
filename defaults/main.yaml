@@ -1,0 +1,5 @@
+---
+mailgun_smtp_host: "smtp.eu.mailgun.org"
+mailgun_smtp_port: 587
+mailgun_username: "postmaster@mg.dummy.com"
+mailgun_password: "dummy"

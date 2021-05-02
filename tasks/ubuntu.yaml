@@ -1,0 +1,17 @@
+- name: Install the postfix package
+  ansible.builtin.apt:
+    name: "postfix"
+    state: present
+
+- name: Configure main postfix file
+  ansible.builtin.template:
+    src: main.cf.j2
+    dest: /etc/postfix/main.cf
+    mode: '0644'
+  notify: restart postfix
+
+- name: enable & start postfix
+  ansible.builtin.service:
+    name: "postfix"
+    state: started
+    enabled: yes
